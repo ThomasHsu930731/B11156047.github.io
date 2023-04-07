@@ -43,19 +43,32 @@
             color: purple;
             text-align: center
         }
+
+        .dis{
+            border-style:hidden;
+        }
     </style>
 </head>
 
 <body>
     <h1>MIS快餐點餐價格表</h1>
-    <table>
+    <table id="tableCaption">
         <script language="Javascript">
-            var dollar = 8;
-            for (i = 5 ; i <= 1 ; i--){
-                dollar = dollar + 3;
-                document.write("<tr></tr>");
+            var i , j;
+            var dollar = [8 ,11 ,14 ,17 ,20];
+                num = [5 ,4 ,3 ,2 ,1];
+                qua = [3 ,4 ,5 ,6 ,7];
+            document.write("<tr>");
+            document.write("<td class = 'dis'>");
+            for (i = 0 ; i <= 4 ; i ++){
+                document.write("<td id ='tableTitle'>" + num[i] + "號餐<br>" + dollar[i] + "元");
+            }
+            for (i = 0 ; i <= 4 ; i ++){
                 document.write("<tr>");
-                document.write("<td>" + i + "號餐" + dollar + "元</td>");
+                document.write("<td id = 'tableTitle'>" + qua[i] + "</td>");
+                for (j = 0 ; j <= 4 ; j ++){
+                    document.write("<td class ='content'>" + qua[i] + "*" + "=" + dollar[j] + "=" + qua[i]*dollar[j]);
+                }
             }
         </script>
     </table>
